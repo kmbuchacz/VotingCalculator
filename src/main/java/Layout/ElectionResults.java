@@ -41,7 +41,6 @@ public class ElectionResults extends JFrame implements ActionListener {
 		loginPanel.setLayout(new GridBagLayout());
 
 		// lables
-		
 
 		for (Map.Entry<String, Integer> entry : operator.partyVoteShare().entrySet()) {
 			
