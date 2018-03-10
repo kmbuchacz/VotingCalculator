@@ -10,7 +10,7 @@ import org.hibernate.query.Query;
 import Entity.Client;
 import Security.PeselHasher;
 
-public class ClientOperationsImpl implements ClientOperations {
+public class ClientOperationsImpl  {
 
 	SessionFactory Factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Client.class)
 			.buildSessionFactory();

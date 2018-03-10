@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 
-import DAO.CandidateOperationsImpl;
+import DAO.CandidateOperations;
 import DAO.InvalidAndInlegalOperations;
 import Entity.Candidate;
 import Statistic.VoteShare;
@@ -26,7 +26,7 @@ public class ElectionResults extends JFrame implements ActionListener {
 	JFrame frame = new JFrame("Welcome to 2018 elections. This is voting side");
 	VoteShare operator = new VoteShare();
 	List<Candidate> candidate = new ArrayList<Candidate>();
-	CandidateOperationsImpl candidateOperator = new CandidateOperationsImpl();
+	CandidateOperations candidateOperator = new CandidateOperations();
 	int i = 1;
 	InvalidAndInlegalOperations invalidVotesOperator = new InvalidAndInlegalOperations();
 

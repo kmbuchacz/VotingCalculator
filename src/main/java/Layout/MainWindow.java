@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import org.json.JSONException;
-import DAO.ClientOperations;
 import DAO.ClientOperationsImpl;
 import DAO.InvalidAndInlegalOperations;
 import Entity.Client;
@@ -24,7 +23,7 @@ import Validator.MultipleClientValidator;
 
 public class MainWindow extends JFrame implements ActionListener {
 
-	ClientOperations operator = new ClientOperationsImpl();
+	ClientOperationsImpl operator = new ClientOperationsImpl();
 
 	MultipleClientValidator operator2 = new MultipleClientValidator();
 
@@ -119,7 +118,8 @@ public class MainWindow extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals("Submit")) {
 			frame.dispose();
 			try {
-				if (voterName.getText().equals("") || voterSurname.getText().equals("") || voterPesele.getText().equals("") ) {
+				if (voterName.getText().equals("") || voterSurname.getText().equals("")
+						|| voterPesele.getText().equals("")) {
 					new InvalidPesel();
 				}
 
@@ -137,18 +137,15 @@ public class MainWindow extends JFrame implements ActionListener {
 					// Here should be few more validators - chcecking if for example field Name and
 					// Surname does not contain numbers
 
-				} 
-				else if (BlockedListValidator.validateUser(voterPesele.getText())
-						|| !AgeValidotor.ageValidator(voterPesele.getText())
-						) {
+				} else if (BlockedListValidator.validateUser(voterPesele.getText())
+						|| !AgeValidotor.ageValidator(voterPesele.getText())) {
 					frame.dispose();
 					InvalidAndInlegalOperations operator = new InvalidAndInlegalOperations();
 					operator.saveIllegal();
 					new BlockedVoterPrompt();
 					System.out.println("This person have no voting rights");
 
-				} 
-				else {
+				} else {
 
 					tempClient.setName(voterName.getText());
 					tempClient.setSurname(voterSurname.getText());
@@ -160,7 +157,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					//
 				}
 			} catch (JSONException e1) {
-				
+
 				System.out.println("ahahahahh you have exception in JSON wchich is not use anymore");
 				e1.printStackTrace();
 			} catch (IOException e1) {

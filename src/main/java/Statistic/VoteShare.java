@@ -12,13 +12,13 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import DAO.CandidateOperationsImpl;
+import DAO.CandidateOperations;
 import DAO.InvalidAndInlegalOperations;
 import Entity.Candidate;
 
 public class VoteShare {
 
-	CandidateOperationsImpl operator = new CandidateOperationsImpl();
+	CandidateOperations operator = new CandidateOperations();
 	List<Candidate> tempListOfCandidates = operator.getCandidateList();
 
 	InvalidAndInlegalOperations opr = new InvalidAndInlegalOperations();

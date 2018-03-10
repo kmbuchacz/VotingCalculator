@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 import org.json.JSONException;
 
-import DAO.CandidateOperationsImpl;
+import DAO.CandidateOperations;
 import DAO.ClientOperationsImpl;
 import DAO.InvalidAndInlegalOperations;
 import Entity.Client;
@@ -75,7 +75,7 @@ public class ConfirmationPopup extends JFrame implements ActionListener {
 
 			if (indexesThatNeedToGoUp.size() == 1) {
 
-				CandidateOperationsImpl DBoperation = new CandidateOperationsImpl();
+				CandidateOperations DBoperation = new CandidateOperations();
 				DBoperation.upDateVotes(indexesThatNeedToGoUp);
 
 				clientOperator.saveClient(tempClient);

@@ -10,13 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class BlockedAlreadyVoted extends JFrame implements ActionListener {
+	
 	JFrame frame = new JFrame("You have already gave your vote");
-	public BlockedAlreadyVoted() {
 
-		
+	public BlockedAlreadyVoted() {
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setSize(600, 600);
-		
+
 		JLabel notification = new JLabel("You have already gave your vote! Thank you!");
 		JButton back = new JButton("back");
 		back.addActionListener(this);

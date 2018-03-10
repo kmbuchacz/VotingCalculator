@@ -9,36 +9,30 @@ import org.hibernate.query.Query;
 
 import Entity.Candidate;
 
-public class CandidateOperationsImpl  {
-	SessionFactory Factory = new Configuration()
-			.configure("hibernate.cfg.xml")
-			.addAnnotatedClass(Candidate.class)
+public class CandidateOperations {
+	SessionFactory Factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Candidate.class)
 			.buildSessionFactory();
-	
-	
-
 
 	public void upDateVotes(List<Integer> indexesThatNeedToGoUp) {
-		
-		
+
 		Session session = Factory.getCurrentSession();
-		
+
 		session.beginTransaction();
-		for(int i=0; i< indexesThatNeedToGoUp.size();i++ ) {
+		for (int i = 0; i < indexesThatNeedToGoUp.size(); i++) {
 			int candidatewithNewVote = indexesThatNeedToGoUp.get(i);
 			Candidate tempCandidate = session.get(Candidate.class, candidatewithNewVote);
-			
-			tempCandidate.setCandidateVotes(tempCandidate.getCandidateVotes()+1);
-			
+
+			tempCandidate.setCandidateVotes(tempCandidate.getCandidateVotes() + 1);
+
 			session.save(tempCandidate);
-			
+
 		}
-	session.getTransaction().commit();
-	session.close();
+		session.getTransaction().commit();
+		session.close();
 	}
 
-	public List <Candidate> getCandidateList(){
-		
+	public List<Candidate> getCandidateList() {
+
 		Session session = Factory.getCurrentSession();
 
 		session.beginTransaction();
@@ -49,9 +43,7 @@ public class CandidateOperationsImpl  {
 		session.getTransaction().commit();
 		session.close();
 		return candidateList;
-		
+
 	}
-	
-	
-	
+
 }

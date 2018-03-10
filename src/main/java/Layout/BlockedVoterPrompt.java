@@ -17,20 +17,19 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import DAO.CandidateOperationsImpl;
+import DAO.CandidateOperations;
 import DAO.InvalidAndInlegalOperations;
 import Entity.Candidate;
 import Statistic.VoteShare;
 
-public class BlockedVoterPrompt extends JFrame  {
-	CandidateOperationsImpl candidateOperator = new CandidateOperationsImpl();
+public class BlockedVoterPrompt extends JFrame {
+
+	CandidateOperations candidateOperator = new CandidateOperations();
 	InvalidAndInlegalOperations invalidVotesOperator = new InvalidAndInlegalOperations();
 	VoteShare operator = new VoteShare();
 	JFrame frame = new JFrame("You have no voting right");
-	
-	public BlockedVoterPrompt() {
 
-		
+	public BlockedVoterPrompt() {
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setSize(600, 600);
 		GridBagConstraints b = new GridBagConstraints();
@@ -38,25 +37,26 @@ public class BlockedVoterPrompt extends JFrame  {
 		loginPanel.setLayout(new GridBagLayout());
 
 		JLabel disallowed = new JLabel("Unfortunately you have no voting rights");
-		b.gridx=1;
-		b.gridy=2;
-		b.insets=new Insets(50, 0, 50, 0);
-		loginPanel.add(disallowed,b);
-		
-		JLabel information = new JLabel("<html> You are under 18 <br/>or your pesel is blocked and you have lost your voting right</html>");
-		b.gridx=1;
-		b.gridy=3;
-		b.insets=new Insets(50, 0, 50, 0);
-		loginPanel.add(information,b);
-		
-		
+		b.gridx = 1;
+		b.gridy = 2;
+		b.insets = new Insets(50, 0, 50, 0);
+		loginPanel.add(disallowed, b);
+
+		b = new GridBagConstraints();
+		JLabel information = new JLabel(
+				"<html> You are under 18 <br/>or your pesel is blocked and you have lost your voting right</html>");
+		b.gridx = 1;
+		b.gridy = 3;
+		b.insets = new Insets(50, 0, 50, 0);
+		loginPanel.add(information, b);
+
 		b = new GridBagConstraints();
 		JButton back = new JButton("back");
 		b.gridx = 1;
 		b.gridy = 35;
 		b.insets = new Insets(50, 0, 50, 0);
 		back.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 				new MainWindow();
@@ -93,6 +93,5 @@ public class BlockedVoterPrompt extends JFrame  {
 		frame.setVisible(true);
 
 	}
-
 
 }

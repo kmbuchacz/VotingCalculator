@@ -15,10 +15,8 @@ public class InvalidAndInlegal {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_counter")
 	private int id;
-
 	@Column(name = "invalid_votes")
 	private int invalidVotes;
-
 	@Column(name = "illegal_attempt")
 	private int illegalAttempt;
 

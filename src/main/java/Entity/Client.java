@@ -8,23 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="client")
+@Table(name = "client")
 public class Client {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column (name="idclient")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idclient")
 	private int id;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	@Column(name="surname")
+	@Column(name = "surname")
 	private String surname;
-	@Column(name="pesel")
+	@Column(name = "pesel")
 	private String pesel;
-	@Column (name="passed_vote")
+	@Column(name = "passed_vote")
 	private int passedVote;
-	
+
 	public int isPassedVote() {
 		return passedVote;
 	}
@@ -34,9 +34,9 @@ public class Client {
 	}
 
 	public Client() {
-		
+
 	}
-	
+
 	public Client(String name, String surname, String pesel) {
 		this.name = name;
 		this.surname = surname;
