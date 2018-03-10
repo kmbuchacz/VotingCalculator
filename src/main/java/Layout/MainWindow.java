@@ -134,7 +134,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					System.out.println("Too short pesel or conatin invalid character");
 					new InvalidPesel();
 
-					// Here should be few more validators - chcecking if for example field Name and
+					// Here should be few more checks for example checking if Name is different than null.
 					// Surname does not contain numbers
 
 				} else if (BlockedListValidator.validateUser(voterPesele.getText())

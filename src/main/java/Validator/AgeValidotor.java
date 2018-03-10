@@ -6,7 +6,7 @@ import org.joda.time.Years;
 import Layout.InvalidPesel;
 
 public class AgeValidotor {
-
+	
 	static boolean validateAge = false;
 
 	public static boolean ageValidator(String voterPesel) {
