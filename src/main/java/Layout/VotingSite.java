@@ -17,7 +17,7 @@ import org.json.JSONException;
 
 import Entity.Candidate;
 import Entity.Client;
-import JSON.JsonReader;
+import XMLParser.ReadXML;
 
 public class VotingSite extends JFrame {
 
@@ -39,7 +39,7 @@ public class VotingSite extends JFrame {
 
 		candidateCheckBoxList = new ArrayList<JCheckBox>();
 
-		for (Candidate tempCandidate : JsonReader.candidateDistributor()) {
+		for (Candidate tempCandidate : ReadXML.readCandidate()) {
 			candidate.add(tempCandidate);
 		}
 		for (int i = 0; i < 13; i++) {
