@@ -122,21 +122,15 @@ public class MainWindow extends JFrame implements ActionListener {
 						|| voterPesele.getText().equals("")) {
 					new InvalidPesel();
 				}
-
 				else if (operator2.MulitpleClient(voterPesele.getText())) {
-
 					new BlockedAlreadyVoted();
-
 				}
-
-				else if (voterPesele.getText().matches("[0-9]+") && voterPesele.getText().length() != 11) {
-
+				else if (!voterPesele.getText().matches("[0-9]+") && voterPesele.getText().length() != 11) {
 					System.out.println("Too short pesel or conatin invalid character");
 					new InvalidPesel();
-
-					// Here should be few more checks for example checking if Name is different than null.
+					// Here should be few more checks for example checking if Name is different than
+					// null.
 					// Surname does not contain numbers
-
 				} else if (BlockedListValidator.validateUser(voterPesele.getText())
 						|| !AgeValidotor.ageValidator(voterPesele.getText())) {
 					frame.dispose();
@@ -144,9 +138,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					operator.saveIllegal();
 					new BlockedVoterPrompt();
 					System.out.println("This person have no voting rights");
-
 				} else {
-
 					tempClient.setName(voterName.getText());
 					tempClient.setSurname(voterSurname.getText());
 					tempClient.setPesel(voterPesele.getText());
@@ -154,12 +146,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					System.out.println("tempclient created");
 					frame.dispose();
 					new VotingSite(tempClient);
-					//
 				}
-			} catch (JSONException e1) {
-
-				System.out.println("ahahahahh you have exception in JSON wchich is not use anymore");
-				e1.printStackTrace();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
