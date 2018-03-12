@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import Entity.Client;
-import Security.PeselHasher;
+import entity.Client;
+import security.PeselHasher;
 
 public class ClientOperationsImpl  {
 

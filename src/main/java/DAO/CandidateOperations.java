@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import Entity.Candidate;
+import entity.Candidate;
 
 public class CandidateOperations {
 	SessionFactory Factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Candidate.class)

@@ -3,7 +3,8 @@ package DAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import Entity.InvalidAndInlegal;
+
+import entity.InvalidAndInlegal;
 
 public class InvalidAndInlegalOperations {
 
